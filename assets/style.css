@@ -1,0 +1,259 @@
+/* ================================
+   Internship Log — stylesheet
+   ================================ */
+
+:root {
+  --bg: #fbf5fa;
+  --card: #ffffff;
+  --ink: #33253d;
+  --purple: #7a3fb0;
+  --purple-dark: #5a2b85;
+  --pink: #e0559a;
+  --line: #d9c3e6;
+  --tag-bg: #f1ddf6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: var(--purple); }
+a:hover { color: var(--pink); }
+
+img { max-width: 100%; }
+
+.wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  border-bottom: 3px solid var(--purple);
+  background: var(--card);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--purple-dark);
+  text-decoration: none;
+}
+.topnav a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--ink);
+  margin-left: 16px;
+}
+.topnav a:hover { text-decoration: underline; }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 40px 0 24px;
+}
+.hero .eyebrow {
+  font-size: 0.8rem;
+  color: var(--pink);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.hero h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  color: var(--purple-dark);
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--pink);
+}
+.hero p.lede {
+  max-width: 55ch;
+  font-size: 1rem;
+}
+
+/* ---------- Entry list ---------- */
+.queue-label {
+  font-size: 0.85rem;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin: 16px 0 14px;
+}
+
+.entry {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.entry:hover {
+  border-color: var(--pink);
+}
+.entry-meta {
+  font-size: 0.8rem;
+  color: var(--purple);
+  margin-bottom: 6px;
+}
+.entry h2 {
+  font-size: 1.25rem;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.entry p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.entry .tags {
+  margin-top: 10px;
+}
+.tag {
+  font-size: 0.75rem;
+  color: var(--purple-dark);
+  background: var(--tag-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.entry-emplify {
+  background-image: url('emplify-logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 75% auto;
+  background-color: var(--card);
+  position: relative;
+}
+.entry-emplify::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  border-radius: 6px;
+}
+.entry-emplify > * {
+  position: relative;
+  z-index: 1;
+}
+.entry-emplify .entry-meta,
+.entry-emplify h2,
+.entry-emplify p {
+  background: rgba(255, 255, 255, 0.85);
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+@media (max-width: 560px) {
+  .entry-emplify { background-size: 90% auto; }
+}
+
+/* ---------- Post page ---------- */
+.post-header {
+  padding: 36px 0 16px;
+  border-bottom: 2px solid var(--line);
+}
+.post-header .entry-meta { margin-bottom: 10px; }
+.post-header h1 {
+  font-size: 1.7rem;
+  color: var(--purple-dark);
+  margin: 0 0 8px;
+}
+.post-header .sub {
+  font-size: 0.9rem;
+}
+
+.post-body {
+  padding: 26px 0;
+}
+.post-body h2 {
+  color: var(--purple-dark);
+  font-size: 1.3rem;
+  margin-top: 32px;
+}
+.post-body h3 {
+  color: var(--pink);
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-top: 28px;
+}
+.post-body blockquote {
+  border-left: 4px solid var(--pink);
+  margin: 20px 0;
+  padding: 6px 16px;
+  background: var(--tag-bg);
+}
+.post-body code {
+  background: var(--tag-bg);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+.post-body pre {
+  background: var(--purple-dark);
+  color: #f6e9fb;
+  padding: 14px 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+.post-body pre code { background: none; padding: 0; color: inherit; }
+.post-body ul, .post-body ol { padding-left: 1.3em; }
+.post-body img {
+  border: 2px solid var(--line);
+  margin: 16px 0;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  margin: 24px 0 0;
+  text-decoration: none;
+}
+
+/* ---------- Comments ---------- */
+.comments-section {
+  border-top: 2px solid var(--line);
+  padding: 28px 0 50px;
+}
+.comments-section .queue-label { border-top: none; padding-top: 0; }
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 3px solid var(--purple);
+  padding: 18px 0 30px;
+  margin-top: 16px;
+}
+footer .wrap {
+  font-size: 0.8rem;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 560px) {
+  .topnav a { margin-left: 0; margin-right: 14px; }
+}
